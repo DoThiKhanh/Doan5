@@ -1,1 +1,80 @@
-<p>detail works!</p>
+  <!-- main-container -->
+
+  <section class="main-container col1-layout">
+    <div class="main container">
+      <div class="col-main">
+        <div class="row">
+          <div class="product-view wow">
+            <div class="product-essential">
+              <form action="#" method="post" id="product_addtocart_form">
+                <div class="product-img-box col-lg-6 col-sm-6 col-xs-12">
+                  <img style="width: 550px;height: 520px;" src="assets/product/{{item.product_image}}" alt="" />
+              </div>
+
+                <!-- end: more-images -->
+
+                <div class="product-shop col-lg-6 col-sm-6 col-xs-12">
+                  <div class="product-next-prev"> <a class="product-next" href="#"><span></span></a> <a class="product-prev" href="#"><span></span></a> </div>
+                  <div class="product-name">
+                    <h1>{{item.product_name}}</h1>
+                  </div>
+                  <div class="ratings">
+                    <div class="rating-box">
+                      <div style="width:60%" class="rating"></div>
+                    </div>
+                    <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Your Review</a> </p>
+                  </div>
+                  <!-- <p class="availability in-stock"><span>In Stock</span></p> -->
+                  <div class="price-block">
+                    <div class="price-box">
+                      <p class="special-price"> <span class="price">Giá : {{item.product_price}} VNĐ</span> </p>
+
+                    </div>
+                  </div>
+                  <div class="short-description">
+                    <p><b>Tình trạng:</b> Còn hàng</p>
+                    <p><b>Trọng lượng:</b> 1 Kg</p>
+
+                  </div>
+                  <div class="add-to-box">
+                    <div class="add-to-cart">
+                      <label for="qty">Số lượng : <input style="width: 50px" name="qty" type="number" min="1"  value="1"/></label>
+                      <input name="productid_hidden" type="hidden"  value="" />
+                      <br>
+                      <button class="button btn-cart" title="Add to Cart" type="submit"><span><i class="icon-basket"></i> Thêm giỏ hàng</span></button>
+                    </div>
+
+                  </div>
+
+                </div>
+              </form>
+            </div>
+            <div class="product-collateral">
+              <div class="col-sm-12 wow">
+                <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
+                  <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Mô tả</a> </li>
+                  <li> <a href="#product_tabs_custom" data-toggle="tab">Giới thiệu</a> </li>
+                </ul>
+                <div id="productTabContent" class="tab-content">
+                  <div class="tab-pane fade in active" id="product_tabs_description">
+                    <div class="std">
+                      <p>{{item.product_desc}}</p>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="product_tabs_custom">
+                    <div class="product-tabs-content-inner clearfix">
+                      <p>{{item.product_content}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End main-container -->
+
+
