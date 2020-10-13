@@ -1,1 +1,66 @@
-<p>list works!</p>
+<section class="main-container col2-left-layout">
+  <div class="main container">
+    <div class="row">
+      <section class="col-sm-9 col-xs-12 col-sm-push-3 wow">
+        <div class="category-title">
+          <h1>Danh mục / Sản phẩm</h1>
+        </div>
+        <div class="category-products">
+          <ul id="products-list" class="products-list">
+              <ng-container *ngFor="let item of list">
+                  <li class="item odd">
+                      <div class="col-item">
+                        <div class="product_image">
+                          <div class="images-container"> <a class="product-image" title="Sample Product" href=""> <img src="assets/product/{{item.product_image}}" class="img-responsive" alt="a" /> </a>
+                            <div class="qv-button-container"> <a class="qv-e-button btn-quickview-1" href="quick_view.html"><span><span>Quick View</span></span></a> </div>
+                          </div>
+                        </div>
+                        <div class="product-shop">
+                          <h2 class="product-name"><a title=" Sample Product" href=""> {{item.product_name}} </a></h2>
+                          <div class="price-box">
+                            <p class="special-price"> <span class="price-label"></span> <span id="product-price-212" class="price"> {{item.product_price}} </span> </p>
+                          </div>
+                          <div class="ratings">
+                            <div class="rating-box">
+                              <div style="width:50%" class="rating"></div>
+                            </div>
+                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#review-form">Add Your Review</a> </p>
+                          </div>
+                          <div class="desc std">
+                            <p>{{item.product_desc}}</p>
+                          </div>
+                          <div class="actions">
+                            <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
+                            <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="compare.html"><span>Add to Compare</span></a> </span> </div>
+                        </div>
+                      </div>
+                    </li>
+              </ng-container>
+
+
+
+          </ul>
+        </div>
+      </section>
+      <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow">
+        <div class="side-nav-categories">
+          <ng-container *ngFor="let mn of menus">
+          <div class="block-title" *ngIf="mn.children !=null"> {{mn.category_name}} </div>
+
+          <!--block-title-->
+          <!-- BEGIN BOX-CATEGORY -->
+          <div class="box-content box-category">
+            <ul>
+              <ng-container *ngFor="let m of mn.children">
+              <li> <a class="active" [routerLink] = "['/product/list',m.category_id]">{{m.category_name}}</a></li>
+            </ng-container>
+            </ul>
+          </div>
+          <!--box-content box-category-->
+        </ng-container>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</section>
