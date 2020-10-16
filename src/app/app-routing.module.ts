@@ -29,7 +29,7 @@ const routes: Routes = [
    },
 
    {
-     path: 'home',
+     path: 'main',
      component: MainComponent,
    },
 
@@ -42,10 +42,7 @@ const routes: Routes = [
     path: 'list',
     component: ListComponent,
   },
-   {
-     path: 'login',
-     component: LoginComponent,
-   },
+
    {
     path: '**',
     component: NotFoundComponent,
