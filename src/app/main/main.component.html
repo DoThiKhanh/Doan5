@@ -7,7 +7,7 @@
         <ng-container *ngFor="let new of list_item_new">
           <li class="item col-lg-2 col-md-3 col-sm-6 col-xs-6">
             <div class="col-item">
-              <div class="sale-label sale-top-right">Sale</div>
+              <div class="sale-label sale-top-right">New</div>
               <div class="images-container"> <a class="product-image" title="Sample Product" [routerLink]="['/product/detail',new.product_id]"> <img src="assets/product/{{new.product_image}}" class="img-responsive" alt="a" /> </a>
                 <div class="actions">
                   <div class="actions-inner">
@@ -52,7 +52,8 @@
         <h2>Sản Phẩm</h2>
       </div>
         <ul class="products-grid">
-          <ng-container *ngFor="let product of list_item">
+          <!-- <ng-container *ngFor="let product of list_item |paginate:{productsPerPage:5,currentPage:pageActual}"> -->
+            <ng-container *ngFor="let product of list_item ">
             <li class="item col-lg-3 col-md-3 col-sm-6 col-xs-6">
               <div class="col-item">
                 <div class="images-container"> <a class="product-image" title="Sample Product" [routerLink]="['/product/detail',product.product_id]"> <img src="assets/product/{{product.product_image}}" class="img-responsive" alt="a" /> </a>
@@ -98,5 +99,8 @@
 
         </ul>
   </div>
-  <div style="width: 100%;float: left;margin-left: 40%">1 2 3</div>
+  <!-- <div style="width: 100%;float: left;margin-left: 40%">1 2 3</div> -->
+  <!-- <div class="has-text-centered">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div> -->
 </section>

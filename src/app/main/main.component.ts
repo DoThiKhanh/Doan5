@@ -11,6 +11,7 @@ import { BaseComponent } from '../lib/base-component';
 export class MainComponent extends BaseComponent implements OnInit {
   list_item:any;
   list_item_new:any;
+  // pageActual:number;
 
   constructor(injector: Injector) {
     super(injector);

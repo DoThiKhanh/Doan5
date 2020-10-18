@@ -9,12 +9,13 @@ import { BaseComponent } from '../../lib/base-component';
 })
 export class DetailComponent extends BaseComponent implements OnInit {
   item:any;
-
+ tuongtu:any;
   constructor(injector: Injector) {
     super(injector);
   }
   ngOnInit(): void {
     this.item = {};
+    this.tuongtu=[];
     this._route.params.subscribe(params => {
       let id = params['id'];
       this._api.get('/api/product/get-by-id/'+id).pipe(takeUntil(this.unsubscribe)).subscribe((res: any) => {
@@ -23,6 +24,11 @@ export class DetailComponent extends BaseComponent implements OnInit {
           this.loadScripts();
         });
       });
+    });
+    this._route.params.subscribe(params => {
+    let id = params['id'];
+    this._api.get('/api/product/get-tuongtu/'+id).takeUntil(this.unsubscribe).subscribe(res => {
+      this.tuongtu = res;});
     });
   }
   addToCart(it) {

@@ -11,6 +11,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   menus:any;
   total:any;
   menus1:any;
+
   constructor(injector: Injector) {
     super(injector);
   }
