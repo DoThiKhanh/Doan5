@@ -35,13 +35,9 @@
                     <td class="a-center movewishlist">
 
                       <div class="cart_quantity_button">
-                          <input class="cary_quantity_input" name="qtybutton" #inp  min="1" max="100" (change)="addQty(c,inp.value)" [value]="c.quantity" type="number">
+                          <input class="cary_quantity_input" name="qtybutton" #inp  min="1" max="100" (change)="addQty(c,inp.value)" [value]="c.quantity" type="number" >
 
-                <!-- <form action="" method="POST" >
-                <input style="width: 50px" class="input-text qty" type="text" name="cart_quantity" value=""  >
-                <input type="hidden" value="" name="rowId_cart" class="form-control">
-                <input type="submit" value="Cập nhật" name="update_qty" class="btn btn-default btn-sm">
-                </form> -->
+
           </div>
                     </td>
                     <td class="a-right movewishlist"><span class="cart-price">

@@ -52,7 +52,7 @@
         <h2>Sản Phẩm</h2>
       </div>
         <ul class="products-grid">
-          <!-- <ng-container *ngFor="let product of list_item |paginate:{productsPerPage:5,currentPage:pageActual}"> -->
+
             <ng-container *ngFor="let product of list_item ">
             <li class="item col-lg-3 col-md-3 col-sm-6 col-xs-6">
               <div class="col-item">
@@ -60,11 +60,8 @@
                   <div class="actions">
                     <div class="actions">
                       <div class="actions-inner">
-                        <button type="button" class="button btn-cart" (click)="addToCart(product)"><span>Add to Cart</span></button>
-                        <ul class="add-to-links">
-                          <li><a (click)="addToCart(product)" title="Add to cart" class="link-wishlist"><span>Add to cart</span></a></li>
-                          <li><a (click)="addToCart(product)" title="Add to cart" class="link-compare "><span>Add to cart</span></a></li>
-                        </ul>
+                        <button type="button"   style="width: 100%;" class="button btn-cart" (click)="addToCart(product)"><span>Add to Cart</span></button>
+
                       </div>
                     </div>
                   </div>
@@ -97,10 +94,9 @@
           </ng-container>
 
 
-        </ul>
+        </ul><div>
+  <ngb-pagination style="float: right;" [collectionSize]="list_item[0].total" [pageSize]="size" [(page)]="index" [maxSize]="10" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+</div>
   </div>
-  <!-- <div style="width: 100%;float: left;margin-left: 40%">1 2 3</div> -->
-  <!-- <div class="has-text-centered">
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
-</div> -->
+
 </section>
