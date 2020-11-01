@@ -20,14 +20,14 @@
                           <div class="price-box">
                             <p class="special-price"> <span class="price-label"></span> <span id="product-price-212" class="price"> {{item.product_price | currency:"VND"}} </span> </p>
                           </div>
-                          <div class="ratings">
+                          <!-- <div class="ratings">
                             <div class="rating-box">
                               <div style="width:50%" class="rating"></div>
                             </div>
                             <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#review-form">Add Your Review</a> </p>
-                          </div>
+                          </div> -->
                           <div class="desc std">
-                            <p>{{item.product_desc}}</p>
+                            <p innerHtml="{{item.product_desc}}"></p>
                           </div>
                           <div class="actions">
                             <button class="button btn-cart ajx-cart" title="Add to Cart" type="button" (click)="addToCart(item)"><span>Add to Cart</span></button>

@@ -18,12 +18,7 @@
                   <div class="product-name">
                     <h1>{{item.product_name}}</h1>
                   </div>
-                  <div class="ratings">
-                    <div class="rating-box">
-                      <div style="width:60%" class="rating"></div>
-                    </div>
-                    <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Your Review</a> </p>
-                  </div>
+
                   <!-- <p class="availability in-stock"><span>In Stock</span></p> -->
                   <div class="price-block">
                     <div class="price-box">
@@ -41,7 +36,8 @@
                       <label for="qty">Số lượng : <input style="width: 50px" name="qty" type="number" min="1"  value="1"/></label>
                       <input name="productid_hidden" type="hidden"  value="" />
                       <br>
-                      <p>Mô tả: {{item.product_desc}}</p>
+                      <!-- <p>Mô tả:</p> -->
+                      <!-- <p innerHtml="{{item.product_desc}}"> </p> -->
                       <br>
                       <button class="button btn-cart" title="Add to Cart" (click)="addToCart(item)" type="submit"><span><i class="icon-basket"></i> Add to cart</span></button>
                     </div>
@@ -54,20 +50,21 @@
             <div class="product-collateral">
               <div class="col-sm-12 wow">
                 <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
-                  <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Thông tin chi tiết</a> </li>
-                  <li> <a href="#product_tabs_custom" data-toggle="tab">Giới thiệu</a> </li>
+                  <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Giới thiệu </a> </li>
+                  <li> <a href="#product_tabs_custom" data-toggle="tab">Thông tin chi tiết</a> </li>
                 </ul>
                 <div id="productTabContent" class="tab-content">
-                  <div class="tab-pane fade in active" id="product_tabs_description">
-                    <div class="std">
-                      <p>{{item.product_desc}}</p>
-                    </div>
-                  </div>
                   <div class="tab-pane fade" id="product_tabs_custom">
                     <div class="product-tabs-content-inner clearfix">
-                      <p>{{item.product_content}}</p>
+                      <p innerHtml="{{item.product_content}}"></p>
                     </div>
                   </div>
+                  <div class="tab-pane fade in active" id="product_tabs_description">
+                    <div class="std">
+                      <p innerHtml="{{item.product_desc}}"></p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
@@ -99,11 +96,7 @@
                             <div class="item-title"> <a title=" Sample Product" [routerLink]="['/product/detail',item.product_id]"> {{item.product_name}} </a> </div>
                             <!--item-title-->
                             <div class="item-content">
-                              <div class="ratings">
-                                <div class="rating-box">
-                                  <div style="width:60%" class="rating"></div>
-                                </div>
-                              </div>
+
                               <div class="price-box">
                                 <p class="special-price"> <span class="price"> {{item.product_price | currency:"VND"}} </span> </p>
                               </div>
